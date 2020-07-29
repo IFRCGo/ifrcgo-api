@@ -218,7 +218,12 @@ class DetailEventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Event
-        fields = ('name', 'dtype', 'countries', 'districts', 'summary', 'num_affected', 'ifrc_severity_level', 'glide', 'disaster_start_date', 'created_at', 'auto_generated', 'appeals', 'contacts', 'key_figures', 'is_featured', 'is_featured_region', 'field_reports', 'hide_attached_field_reports', 'updated_at', 'id', 'slug', 'tab_one_title', 'tab_two_title', 'tab_three_title', 'parent_event',)
+        fields = ('name', 'dtype', 'countries', 'districts', 'summary',
+                 'num_affected', 'ifrc_severity_level', 'glide', 'disaster_start_date',
+                 'created_at', 'auto_generated', 'appeals', 'contacts', 'key_figures',
+                 'is_featured', 'is_featured_region', 'field_reports', 'hide_attached_field_reports',
+                 'hide_map', 'updated_at', 'id', 'slug', 'tab_one_title', 'tab_two_title',
+                 'tab_three_title', 'parent_event',)
         lookup_field = 'slug'
 
 class SituationReportTypeSerializer(serializers.ModelSerializer):

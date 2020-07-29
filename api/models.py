@@ -441,6 +441,8 @@ class Event(models.Model):
 
     hide_attached_field_reports = models.BooleanField(verbose_name=_('hide field report numerical details?'), default=False)
 
+    hide_map = models.BooleanField(verbose_name=_('hide map'), default=False)
+    
     # Tabs. Events can have upto 3 tabs to organize snippets.
     tab_one_title = models.CharField(
         verbose_name=_('tab one title'), max_length=50, null=False, blank=True, default='Additional Information'
