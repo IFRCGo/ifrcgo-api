@@ -468,7 +468,7 @@ class AppealDocumentFilter(filters.FilterSet):
 
 
 class AppealDocumentViewset(viewsets.ReadOnlyModelViewSet):
-    queryset = AppealDocument.objects.all()
+    queryset = AppealDocument.objects.all() # .select_related('appeal')
     ordering_fields = ('created_at', 'name',)
     filter_class = AppealDocumentFilter
 

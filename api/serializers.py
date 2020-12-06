@@ -593,9 +593,14 @@ class AppealDocumentTableauSerializer(serializers.ModelSerializer):
 
 
 class AppealDocumentSerializer(ModelSerializer):
+    appeal_code = serializers.SerializerMethodField()
+
+    def get_appeal_code(self, obj):
+        return obj.get_appeal_code()
+
     class Meta:
         model = AppealDocument
-        fields = ('created_at', 'name', 'document', 'document_url', 'appeal', 'id',)
+        fields = ('created_at', 'name', 'document', 'document_url', 'appeal', 'appeal_code', 'id',)
 
 
 class ProfileSerializer(ModelSerializer):

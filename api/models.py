@@ -897,6 +897,9 @@ class AppealDocument(models.Model):
             self.created_at = timezone.now()
         return super(AppealDocument, self).save(*args, **kwargs)
 
+    def get_appeal_code(self):
+        return self.appeal.code
+
     def __str__(self):
         return '%s - %s' % (self.appeal, self.name)
 
