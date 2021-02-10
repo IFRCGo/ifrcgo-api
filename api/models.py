@@ -1282,6 +1282,10 @@ class Action(models.Model):
         return self.name
 
 
+# TODO: ActionCategorySummary actionstaken - actioncategory enum - description
+# Currently hardcoded notes_ fields in FieldReport, later this might be useful
+
+
 class ActionsTaken(models.Model):
     """ All the actions taken by an organization """
 
@@ -1291,6 +1295,7 @@ class ActionsTaken(models.Model):
     )
     actions = models.ManyToManyField(Action, verbose_name=_('actions'), blank=True)
     summary = models.TextField(verbose_name=_('summary'), blank=True)
+    # TODO: ActionCategorySummary (above)
     field_report = models.ForeignKey(
         FieldReport, verbose_name=_('field report'), related_name='actions_taken', on_delete=models.CASCADE
     )
